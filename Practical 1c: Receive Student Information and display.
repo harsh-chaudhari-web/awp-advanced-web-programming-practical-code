@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+
+class Student
+{
+    public string StudentId { get; set; }
+    public string StudentName { get; set; }
+    public string CourseName { get; set; }
+    public DateTime DateOfBirth { get; set; }
+}
+
+class Program
+{
+    static void Main()
+    {
+        List<Student> students = new List<Student>();
+
+        for (int i = 0; i < 2; i++)  // You can change 2 to how many students you want to input
+        {
+            Student student = new Student();
+            
+            Console.Write("Enter Student ID: ");
+            student.StudentId = Console.ReadLine();
+            
+            Console.Write("Enter Student Name: ");
+            student.StudentName = Console.ReadLine();
+            
+            Console.Write("Enter Course Name: ");
+            student.CourseName = Console.ReadLine();
+            
+            Console.Write("Enter Date of Birth (MM/DD/YYYY): ");
+            student.DateOfBirth = DateTime.Parse(Console.ReadLine());
+
+            students.Add(student);
+        }
+
+        Console.WriteLine("\nStudent Information:");
+        foreach (Student student in students)
+        {
+            Console.WriteLine($"ID: {student.StudentId}, Name: {student.StudentName}, Course: {student.CourseName}, DOB: {student.DateOfBirth.ToShortDateString()}");
+        }
+    }
+}
