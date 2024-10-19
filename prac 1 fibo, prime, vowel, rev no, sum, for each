@@ -4,14 +4,15 @@ using System.Collections.Generic;
 
 using System.Linq;
 
-using System.Text; Class Op
-
+using System.Text; 
+Class Op
+{
 int a = 0 b = 1 c, flimit, fcount=0;
 
 int pnum;
 
 public void finput()
-
+{
 Console.WriteLine("Enter limit of fibonacci series: "); flimit int.Parse(Console.ReadLine());
 
 public void fop()
@@ -19,18 +20,21 @@ public void fop()
 {
 
 if (flimit <= 0 )
-
+{
 Console.WriteLine("Fibonacci series: ");
 
-Console.WriteLine("Limit cannot be zero or negative"); }
+Console.WriteLine("Limit cannot be zero or negative"); 
+}
 
 else
 
 { Console.WriteLine("Fibonacci series: "); while (flimit > fcount)
 
-{ Console.Write(a + ""); c = a + b fcount++;
-
-a = b b = c
+{ Console.Write(a + ""); c = a + b;
+a=b;
+b=c;
+fcount++;
+}}}
 
 } } public void pinput() }
 
