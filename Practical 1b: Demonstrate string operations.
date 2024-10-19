@@ -1,0 +1,28 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string sample = "Hello, C# Programming!";
+        
+        // String Length
+        Console.WriteLine("Length of string: " + sample.Length);
+        
+        // Convert to uppercase
+        Console.WriteLine("Uppercase: " + sample.ToUpper());
+        
+        // Convert to lowercase
+        Console.WriteLine("Lowercase: " + sample.ToLower());
+        
+        // Substring example
+        Console.WriteLine("Substring (5, 3): " + sample.Substring(5, 3));
+        
+        // Concatenation
+        string anotherString = " Let's code!";
+        Console.WriteLine("Concatenated string: " + string.Concat(sample, anotherString));
+        
+        // Replace example
+        Console.WriteLine("Replace 'C#' with '.NET': " + sample.Replace("C#", ".NET"));
+    }
+}
