@@ -1,2 +1,2 @@
 # awp-advanced-web-programming-practical
-this repo Contains Adavance web programming Practical Codes For Practice 
+# Advanced Web Programming (AWP) Practicals - C# and ASP.NET Solutions for 2024 Assignments
