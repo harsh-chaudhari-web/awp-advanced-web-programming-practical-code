@@ -1,0 +1,69 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="practical2b.WebForm1" %>
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title></title>
+</head>
+<body>
+<form id="form1" runat="server">
+<div>
+<asp:Label ID="Label1" runat="server" BorderStyle="Groove" Text="Delegate Demo"></asp:Label>
+<br />
+<br />
+<asp:Label ID="Label2" runat="server" Text="Enter the Number 1:"></asp:Label> &nbsp;
+<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+ 
+<br />
+<br />
+<asp:Label ID="Label3" runat="server" Text="Enter the Number 2:"></asp:Label> &nbsp;&nbsp;
+<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+<br />
+<br />
+<br />
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Delegate Demo" />
+<br />
+<br />
+<asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+<br />
+<br />
+<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+</div>
+</form>
+</body>
+</html>
+
+
+Pract2b.aspx.cs
+using System;
+using System.Collections.Generic; using System.Linq;
+using System.Reflection.Emit; using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+
+namespace practical2b
+{
+public delegate int MathOperation(int a, int b);
+public partial class WebForm1 : System.Web.UI.Page
+ 
+{
+int Add(int a, int b)
+{
+return a + b;
+}
+int Subtract(int a, int b)
+{
+return a - b;
+}
+protected void Button1_Click(object sender, EventArgs e)
+{
+int x = Convert.ToInt32(TextBox1.Text); int y = Convert.ToInt32(TextBox2.Text);
+MathOperation add = new MathOperation(Add); MathOperation subtract = new MathOperation(Subtract); Label4.Text = add(x, y).ToString();
+Label5.Text = subtract(x, y).ToString();
+}
+}
+}
