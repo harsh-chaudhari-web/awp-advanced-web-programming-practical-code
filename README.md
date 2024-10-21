@@ -1,7 +1,3 @@
-Here’s an SEO-optimized README file for your GitHub repository that will make it easy to find in search results:
-
----
-
 # AWP Practicals 2024 - Advanced Web Programming Codes
 
 Welcome to the **Advanced Web Programming (AWP) Practicals** repository for 2024. This repository contains practical solutions for **C#** and **ASP.NET** assignments from an Advanced Web Programming course. Each solution demonstrates key concepts in C# and ASP.NET, covering topics such as web forms, validation controls, database integration, and data binding.
