@@ -1,0 +1,91 @@
+//Access Database
+
+using System:
+
+using System.Collections.Generic;
+
+using System.Ling
+
+using System. Web:
+
+using System.Web.Ul;
+
+using System.Web.UI.WebControls;
+
+using System.Data;
+
+using System.Data.SqlClient; using System.Data.OleDb;
+
+public partial class database 2: System.Web.UI.Page
+
+//display
+
+protected void b1 Click(object sender, EventArgs e)
+
+イ string str="Provider=Microsoft.ACE.OLEDB.12.0;Data
+
+Source D:\\TYIT120\\mydb.accdb";
+
+OleDbConnection con = new OleDbConnection(str);
+
+try
+
+//SqlConnection con-new SqlConnection();
+
+OleDbCommand cmd=new OleDbCommand("select *
+
+from emp",con);
+
+con.Open();
+
+GridView1.DataSource=cmd.ExecuteReader(); }
+
+GridView1.DataBind();
+
+catch(Exception ef)
+
+Ibltext. Text ef.Message;
+
+finally
+
+}
+
+)
+
+con.Close(); )
+
+//insert
+
+protected void b2_Click(object sender, EventArgs e)
+
+( string str = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\TYIT120\\mydb.accdb";
+
+string insstr;
+
+//int i = 10;
+
+insstr="insert into emp (ename,eaddr,eage,emob)
+
+values(\""+tbname.Text+"\",\""+tbadd. Text+"\","+int.Parse(tbage.Text) +","+int.Parse(tbmob.Text)+")";
+
+OleDbConnection con = new OleDbConnection(str);
+
+Ibltext. Text insstr;
+
+OleDbCommand cmd = new OleDbCommand(insstr, con);
+
+int added = 0;
+
+try
+
+added = cmd.ExecuteNonQuery();
+
+con.Open();
+
+Ibitext.Text = added.ToString() + "Records inserted"; }
+
+catch (Exception ef)
+
+Ibltext.Text = "Error inserting records"+ef.Message; }
+
+finally { con.Close(); }}}
