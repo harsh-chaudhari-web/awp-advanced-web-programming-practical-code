@@ -1,0 +1,92 @@
+Default.aspx
+
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="practical1c.WebForm1" %>
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title></title>
+</head>
+<body>
+<form id="form1" runat="server">
+<div>
+<asp:Label ID="Label1" runat="server" Text="Enter the Number"></asp:Label> &nbsp;&nbsp;
+<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+<br />
+<br />
+ 
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" OnClientClick="Submit_click" Text="Fibbonacci Series" />
+<br />
+<br />
+<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+<br />
+<br />
+<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" OnClientClick="Submit_click" Text="Prime Number" />
+<br />
+<br />
+<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+</div>
+</form>
+</body>
+</html>
+
+
+Default.aspx.cs
+using System;
+using System.Collections.Generic; using System.Linq;
+using System.Reflection.Emit; using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using static System.Net.Mime.MediaTypeNames;
+
+
+namespace practical1c
+{
+public partial class WebForm1 : System.Web.UI.Page
+{
+protected void Page_Load(object sender, EventArgs e)
+{
+ 
+
+
+}
+
+
+protected void Button1_Click(object sender, EventArgs e)
+{
+int a, b, c, i, n;
+a = 0;
+b = 1;
+Label2.Text = a.ToString() + b.ToString(); n = Convert.ToInt32(TextBox1.Text);
+for (i = 1; i <= n; ++i)
+{
+c = a + b;
+Label2.Text=Label2.Text + c.ToString();
+a = b;
+b = c;
+}
+}
+protected void Button2_Click(object sender, EventArgs e)
+{
+int n, i, s = 0;
+n = Convert.ToInt32(TextBox1.Text); if (n == 0 || n == 1)
+s = 1;
+for (i = 2; i <= n / 2; ++i)
+{
+if (n % i == 0)
+{
+s = 1;
+break;
+}
+}
+if (s == 0)
+ 
+Label3.Text = "The given number is prime"; else
+Label3.Text = "The given number is not prime";
+}
+}
+}
