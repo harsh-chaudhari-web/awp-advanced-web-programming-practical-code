@@ -1,0 +1,165 @@
+Pract3a.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="practical3a.WebForm1" %>
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+ 
+<title></title>
+</head>
+<body>
+<form id="form1" runat="server">
+<div>
+<asp:Label ID="Label1" runat="server" Text="ViewState Data:"></asp:Label> &nbsp;
+&nbsp;&nbsp;
+<asp:Label ID="lblstr" runat="server"></asp:Label>
+<br />
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Get Data" />
+<br />
+<br />
+<asp:ListBox ID="ListBox1" runat="server" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged1" AutoPostBack="True" SelectionMode="Multiple" DataTextField="multiple">
+<asp:ListItem>c#</asp:ListItem>
+<asp:ListItem Value="c++"></asp:ListItem>
+<asp:ListItem Value="java"></asp:ListItem>
+<asp:ListItem>c</asp:ListItem>
+</asp:ListBox> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:TextBox ID="TextBox1" runat="server" Height="92px" style="margin-top: 0px" TextMode="MultiLine" AutoPostBack="True"></asp:TextBox>
+<br />
+<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Show" />
+<br />
+<br />
+<asp:Label ID="Label2" runat="server" Text="Select Color:"></asp:Label> &nbsp;
+<asp:RadioButton ID="RadioButton1" runat="server"
+OnCheckedChanged="RadioButton1_CheckedChanged" Text="Red" /> &nbsp;&nbsp;
+<asp:RadioButton ID="RadioButton2" runat="server"
+OnCheckedChanged="RadioButton2_CheckedChanged" Text="Green" />
+ 
+&nbsp;&nbsp;
+<asp:RadioButton ID="RadioButton3" runat="server"
+OnCheckedChanged="RadioButton3_CheckedChanged" Text="Blue" />
+<br />
+<br />
+<asp:Label ID="Label3" runat="server" Text="SelectSpecial Formating:"></asp:Label> &nbsp;
+<asp:CheckBox ID="CheckBox1" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" Text="Bold" />
+&nbsp;
+<asp:CheckBox ID="CheckBox2" runat="server" OnCheckedChanged="CheckBox2_CheckedChanged" Text="Italic" />
+&nbsp;
+<asp:CheckBox ID="CheckBox3" runat="server" OnCheckedChanged="CheckBox3_CheckedChanged" Text="Underline" />
+<br />
+<br />
+<asp:Label ID="Label4" runat="server" Text="Select Size:"></asp:Label> &nbsp;
+<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+<asp:ListItem>10</asp:ListItem>
+<asp:ListItem>20</asp:ListItem>
+<asp:ListItem>30</asp:ListItem>
+<asp:ListItem>40</asp:ListItem>
+<asp:ListItem>50</asp:ListItem>
+</asp:DropDownList>
+<br />
+<br /> &nbsp;<br />
+<asp:Label ID="Label5" runat="server" Text="Select Name:"></asp:Label> &nbsp;&nbsp;
+<asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+<asp:ListItem>Ajay</asp:ListItem>
+ 
+<asp:ListItem>Aditya</asp:ListItem>
+<asp:ListItem>Anand</asp:ListItem>
+<asp:ListItem>Shiv</asp:ListItem>
+<asp:ListItem>Saurav</asp:ListItem>
+<asp:ListItem>Kartikya</asp:ListItem>
+</asp:DropDownList>
+<br />
+<br />
+<br />
+<asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+<br />
+<asp:Label ID="Label7" runat="server" Text="Photo"></asp:Label>
+<br />
+<br />
+<asp:Image ID="Image1" runat="server"
+ImageUrl="https://upload.wikimedia.org/wikipedia/commons/d/df/Family_Portrait.jpg" Width="160px" />
+<br />
+<br />
+</div>
+</form>
+</body>
+</html>
+Pract3a.aspx.cs
+using System;
+using System.Collections.Generic; using System.Linq;
+using System.Reflection.Emit; using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+
+namespace practical3a
+{
+ 
+public partial class WebForm1 : System.Web.UI.Page
+{
+protected void Page_Load(object sender, EventArgs e)
+{
+if (!IsPostBack)
+{
+string str = "Ajay";
+if (ViewState["name"] == null)
+{
+ViewState["name"] = str;
+}
+}
+}
+protected void Button1_Click(object sender, EventArgs e)
+{
+
+
+lblstr.Text = ViewState["name"].ToString();
+}
+protected void Button2_Click(object sender, EventArgs e)
+{
+TextBox1.Text = "";
+for (int i = 0; i < ListBox1.Items.Count;i++)
+{
+if (ListBox1.Items[i].Selected == true)
+{
+TextBox1.Text = TextBox1.Text + "" + ListBox1.Items[i].Text + "\n";
+}
+}
+}
+protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+
+
+lblstr.Font.Size = int.Parse(DropDownList1.SelectedItem.Text);
+}
+ 
+protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+{
+lblstr.Text = DropDownList2.SelectedItem.Text;
+}
+protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+{
+lblstr.BackColor = System.Drawing.Color.Red;
+}
+protected void RadioButton2_CheckedChanged(object sender, EventArgs e)
+{
+lblstr.BackColor = System.Drawing.Color.Green;
+}
+protected void RadioButton3_CheckedChanged(object sender, EventArgs e)
+{
+lblstr.BackColor = System.Drawing.Color.Blue;
+}
+protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+{
+lblstr.Font.Bold = true;
+}
+protected void CheckBox2_CheckedChanged(object sender, EventArgs e)
+{
+lblstr.Font.Italic = true;
+}
+protected void CheckBox3_CheckedChanged(object sender, EventArgs e)
+{
+lblstr.Font.Underline = true;
+}
+}
+}
