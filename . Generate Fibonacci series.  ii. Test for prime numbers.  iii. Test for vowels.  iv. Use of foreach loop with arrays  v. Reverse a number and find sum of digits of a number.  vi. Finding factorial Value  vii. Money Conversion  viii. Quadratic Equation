@@ -1,0 +1,166 @@
+using System; using System.Collections.Generic; using System.Linq; using System.Text;
+
+namespace FIBO {
+
+class Classi class
+
+public void fibo() {
+
+int I = 0 n * 2 = 1 ,n3,n,6 Console.Writenumber you want fibonacci series?"); nint.Parse(Console.ReadLine()); c = 3 Console.Write(ni+ "\t" + n2); while (c <= n) ( n 3=n1+n2; break; } Console.Write("\t" + n3); n * 1 = n2j n 2=p3;
+
+C++
+
+}
+
+} public void testprime() {
+
+int n = 0 Console.Write("Enter the no: ");
+
+nint.Parse(Console.ReadLine()); bool flag false; for (int i = 2 i<=n/2; i++) { if (n %10) { flag = true; break;
+
+}
+
+} if (flag) Console.WriteLine("This is not prime number"); else Console.WriteLine("This is prime number"); Console.ReadKey();
+
+} public void vowel()
+
+{ char[] v = { 'a', 'e', '1', 'o', 'u', 'A', 'E', 'I', '0', 'U' }; Console.Write("Enter a character: "); char c char.Parse(Console.ReadLine()); switch (c)
+{
+case 'a':
+
+case 'A':
+
+case 'e':
+
+case "E":
+
+case '1': case 'I':
+
+case 'o':
+
+case '0': case 'u':
+
+case 'U':
+
+Console.WriteLine("This is a vowel....."); break;
+
+default:
+
+Console.WriteLine("This is not a vowel....."); break;
+
+} } public void useforeach() {
+
+int[] arr = \{4, 5, 6, 7, 8\} ; foreach () Console.WriteLine(ele + " "); // Console.WriteLine();
+
+} public void reverseAndSum()
+
+{
+
+int sum = theta , n = 0 Console.WriteLineEnter the number: "); n = int.Parse(Console.ReadLine()); { int digit temp % 10;
+
+int temp = n;
+
+int rev = theta while (temp > 0)
+
+sum = sum + digit; rev = rev * 10+ digit;
+
+temp temp / 10;
+
+} Console.WriteLine("reverse number is: "+rev); Console.WriteLine("sum of digit number is: "+sum);
+
+}
+
+public void fact()
+
+{
+
+Console.WriteLine("Enter the number: "); int n = int.Parse(Console.ReadLine());
+
+int f = 1
+
+for (int i = 1 i <= n i++)
+
+{ f ^ * =i;
+
+} Console.WriteLine(f);
+
+} public void moneyconversion()
+
+{
+
+float euro = 90f pound 105, yen 0.57f, dollar = 83 ; Console.WriteLine("Enter the amount of money: ");
+
+float rup = float.Parse(Console.ReadLine()); Console.WriteLine(rup + "Rupees = "+(rup/euro)+"Euro"); Console.WriteLine(rup + "Rupees Console.WriteLine(rup + "Rupees = Console.WriteLine(rup + "Rupees = "+ (rup / pound) + "Euro"); + (rup / yen) + "Euro"); + (rup / dollar) + "Euro");
+
+} public void quad()
+
+{
+
+int a = 0 b = 0 c = 0;
+
+double root1 = 0d , root2 0d;
+
+Console.WriteLine("Enter the a,b,c values: ");
+
+a = int.Parse(Console.ReadLine()); b = int.Parse(Console.ReadLine());
+c = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Equation is: "+ a +"x^2+ "+b+"x + "+c);
+
+double v Math.Sqrt((b * b) (4 * a * c));
+
+Console.WriteLine(v);
+
+root1=(-b+v)/(2*a);
+
+root2=(-b - v) /(2*a);
+
+if (root1 == root2)
+
+{ Console.WriteLine("roots are equal:");
+
+}
+
+Console.WriteLine("roots are: "+root1+" and "+root2);
+
+} public static void Main()
+
+{
+
+Class1 ob new Class1();
+
+Console.WriteLine("fibonacci series: ");
+
+ob.fibo();
+
+Console.WriteLine("\n\nCheck for prime numbers: ");
+
+ob.testprime();
+
+Console.WriteLine("\n\nCheck for vowels: ");
+
+ob.vowel();
+
+Console.WriteLine("\n\nforeach loop: ");
+
+ob.useforeach();
+
+Console.WriteLine("\n\nreverse and sum: ");
+
+ob.reverseAndSum();
+
+Console.WriteLine("\n\nfactorial: ");
+
+ob.fact();
+
+Console.WriteLine("\n\nmoney conversion: ");
+
+ob.moneyconversion();
+
+Console.WriteLine("\n\nquadratic equation: ");ob.quad();
+
+Console.ReadKey();
+
+}
+
+} }
