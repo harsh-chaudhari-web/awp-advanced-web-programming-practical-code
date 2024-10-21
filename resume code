@@ -1,0 +1,23 @@
+using using System.Collections.Generic; using System.Linq; using System.Web; using System.Web.UI; using System.Web.UI.WebControls;
+
+public partial class Default System.Web.UI.Page
+
+protected void Page_Load(object sender, EventArgs e)
+
+protected void Button1_Click(object sender, EventArgs e)
+
+{
+
+lbldisp. Text "Hi" txtname.Text + "<br>" + "address:txtaddr.Text + "<br>" + "contact: "+txtcnt.Text + "<br>" + "gender:"+txtgnd.Text + "<br>" + "education:"txtedu.Text + "<br>" + "Lanfguages:"txtlang.Text + "<br>";
+
+foreach(ListItem Is in txtlang.Items)
+
+if (ls.Selected == true)
+
+lbldisp.Text += 1s. Text;
+
+}
+
+} lbldisp.Text +="Hobbies: + txthob.Text;
+
+}}
