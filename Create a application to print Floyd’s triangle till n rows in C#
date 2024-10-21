@@ -1,0 +1,57 @@
+Default.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="practical1b.WebForm1" %>
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title></title>
+</head>
+<body>
+<form id="form1" runat="server">
+<div>
+<asp:Label ID="Label1" runat="server" Text="Floyd's triangle"></asp:Label>
+<br />
+<br />
+<asp:Label ID="Label2" runat="server" Text="Enter Number of Rews:"></asp:Label> &nbsp;
+<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+ 
+<br />
+<br />
+<asp:Button ID="Button1" runat="server" OnClientClick="submit_click" Text="Result" OnClick="Button1_Click1" />
+<br />
+<br />
+<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+</div>
+</form>
+</body>
+</html>
+
+
+Default.aspx.cs
+using System;
+using System.Collections.Generic; using System.Linq;
+using System.Text; using System.Web; using System.Web.UI;
+using System.Web.UI.WebControls; namespace practical1b
+{
+public partial class WebForm1 : System.Web.UI.Page
+{
+protected void Page_Load(object sender, EventArgs e)
+{
+}
+protected void Button1_Click1(object sender, EventArgs e)
+{
+int numOfRows = Convert.ToInt32(TextBox1.Text); int number = 1;
+StringBuilder sb = new StringBuilder(); for (int i = 1; i <= numOfRows; i++)
+ 
+{
+for (int j = 1; j <= i; j++)
+{
+sb.Append(number + " "); number++;
+}
+sb.Append("<br />");
+}
+Label1.Text = sb.ToString();
+}	}}
