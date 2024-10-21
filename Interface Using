@@ -1,0 +1,65 @@
+Pract2c.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="practical2c.WebForm1" %>
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title></title>
+</head>
+<body>
+<form id="form1" runat="server">
+<div>
+<asp:Label ID="Label1" runat="server" Text="Area of circle and rectangle using interface"></asp:Label>
+<br /><br />
+&nbsp;<asp:Label ID="Label2" runat="server" Text="Area of a circle:"></asp:Label> &nbsp;
+<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+<br /><br />
+<asp:Label ID="Label4" runat="server" Text="Area of a rectangle:"></asp:Label>
+ 
+&nbsp;<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+</div>
+</form>
+</body>
+</html>
+
+
+Pract2c.aspx.cs
+using System;
+using System.Collections.Generic; using System.Linq;
+using System.Web; using System.Web.UI;
+using System.Web.UI.WebControls;
+
+
+namespace practical2c
+{
+interface Area
+{
+double show(double s, double t);
+}
+class Rect : Area
+{
+public double show(double s, double t)
+{
+return s*t;
+}
+}
+class Circle : Area
+{
+public double show(double s, double t)
+{
+return (3.14 * s * s);
+}
+ 
+}
+public partial class WebForm1 : System.Web.UI.Page
+{
+protected void Page_Load(object sender, EventArgs e)
+{
+Rect r1 = new Rect(); double x=r1.show(3, 4); Circle c1 = new Circle(); double y=c1.show(3, 4); Label3.Text = x.ToString();
+Label5.Text =y.ToString();
+}
+}
+}
