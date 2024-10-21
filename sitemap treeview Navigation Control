@@ -1,0 +1,51 @@
+//web.sitemap
+
+<?xml version="1.0" encoding="utf-8" ?>
+
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+
+<siteMap Node url="vártak.aspx" title="Vartak" description="">
+
+<siteMap Node uri="com.aspx" title="Commerce" description=""> <siteMap Node url="bms.aspx" title="BMS" description="" />
+
+<siteMap Node url="bbi.aspx" title="BBI" description="" />
+
+<siteMap Node url="bcom.aspx" title="BCOM" description="" />
+
+</siteMap Node>
+
+<siteMap Node url="sci.aspx" title="Science" description="">
+
+<siteMap Node url="plain.aspx" title="Plain" description="" />
+
+<siteMap Node uri="it.aspx" title="IT" description="" />
+
+<siteMapNode url="cs.aspx" title="CS" description="" /> <siteMap Node url="bt.aspx" title="BT" description="" />
+
+</siteMapNode>
+
+</siteMapNode>
+
+</siteMap>
+
+//vartak.aspx
+
+<asp:Label ID="Label1" runat="server" Text="Welcome to vartak
+
+college"></asp:Label>
+
+<asp:TreeView ID="TreeView1" runat="server"
+
+DataSourceID="sitemapds1">
+
+</asp:TreeView>
+
+<asp:SiteMapPath ID="SiteMapPath1" runat="server">
+
+</asp: SiteMapPath>
+
+<asp:Menu ID="Menu1" runat="server" DataSourceID="sitemapds1">
+
+</asp:Menu>
+
+<asp:SiteMapDataSource ID="sitemapds1" runat="server" />
